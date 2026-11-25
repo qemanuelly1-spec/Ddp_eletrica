@@ -146,13 +146,16 @@ section.sec{padding:112px 0}
 
 /* clients */
 .clients{padding:64px 0;border-top:1px solid var(--line)}
-.clients .eyebrow{text-align:center;color:var(--muted);margin-bottom:26px}
+.clients .eyebrow{text-align:center;color:var(--muted);margin-bottom:28px;font-size:14px}
 .cl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.cl{height:88px;border:1px solid var(--line);background:#fff;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;gap:12px;color:#9AA3AF;transition:.25s}
+.cl{height:112px;border:1px solid var(--line);background:#fff;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;gap:12px;color:#9AA3AF;transition:.25s}
 .cl:hover{color:var(--navy)}
 .cl b{font-family:Barlow,sans-serif;font-weight:800;font-size:24px;letter-spacing:.04em}
 .cl small{font-size:10.5px;letter-spacing:.2em}
-.cl.dash{border-style:dashed;background:transparent;font-size:12px;letter-spacing:.18em}
+.cl.dash{border-style:dashed;background:transparent;font-size:14px;letter-spacing:.16em;text-align:center;padding:0 16px}
+/* logos dos clientes */
+.cl-logo{max-width:78%;max-height:60px;object-fit:contain}
+.cl-logo.sq{max-height:78px}
 
 /* cta */
 .cta{background:var(--navy);color:#fff;position:relative;overflow:hidden}
@@ -174,7 +177,8 @@ footer{background:var(--navy);color:#C3CCD8;border-top:1px solid rgba(255,255,25
 .ft .ct li{display:flex;gap:12px}
 .ft .ct .ico{color:var(--amber);width:18px;height:18px;margin-top:2px}
 .qr{margin-top:20px;display:inline-flex;gap:14px;align-items:center;padding:12px;border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);background:rgba(255,255,255,.03)}
-.qr img{width:68px;height:68px;background:#fff;padding:4px;border-radius:4px}
+.qr-code{width:76px;height:76px;background:#fff;padding:5px;border-radius:4px;flex:none}
+.qr-code img,.qr-code canvas{width:100%!important;height:100%!important;display:block}
 .qr b{display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.24em;color:var(--amber)}
 .qr span{font-size:12.5px}
 .fb{border-top:1px solid rgba(255,255,255,.08);padding:24px 0;display:flex;justify-content:space-between;font-size:12.5px;color:#8695A8}
@@ -304,10 +308,10 @@ footer{background:var(--navy);color:#C3CCD8;border-top:1px solid rgba(255,255,25
 .cbox a.v{display:block;margin-top:14px;font-weight:600;color:var(--navy)}
 
 /* misc */
-.wa-float{position:fixed;right:24px;bottom:24px;z-index:60;width:58px;height:58px;border-radius:50%;background:var(--green);display:grid;place-items:center;color:#fff;box-shadow:0 12px 30px -8px rgba(34,197,94,.7)}
-.wa-float:before{content:"";position:absolute;inset:-8px;border-radius:50%;background:rgba(34,197,94,.25);animation:pulse 2.4s infinite;z-index:-1}
-@keyframes pulse{0%{transform:scale(.85);opacity:1}100%{transform:scale(1.3);opacity:0}}
-.wa-float .ico{width:26px;height:26px}
+/* botão flutuante do WhatsApp: ícone oficial + frase, sem animação */
+.wa-float{position:fixed;right:24px;bottom:24px;z-index:60;display:inline-flex;align-items:center;gap:10px;padding:8px 22px 8px 8px;border-radius:999px;background:#25D366;color:#fff;font-weight:600;font-size:15px;box-shadow:0 10px 26px -10px rgba(0,0,0,.45)}
+.wa-float:hover{background:#1EBE5A}
+.wa-float i{width:42px;height:42px;border-radius:50%;background:#fff;color:#25D366;display:grid;place-items:center;font-size:26px}
 .lb{position:fixed;inset:0;z-index:100;background:rgba(1,4,10,.92);display:none;align-items:center;justify-content:center;padding:40px}
 .lb.open{display:flex}
 .lb img{max-height:80vh;border-radius:6px}
@@ -361,6 +365,9 @@ footer{background:var(--navy);color:#C3CCD8;border-top:1px solid rgba(255,255,25
   .gal{grid-template-columns:1fr 1fr;grid-auto-rows:120px;gap:8px}
   .gal img:nth-child(10){grid-column:span 2;height:160px}
   .safety-strip{grid-template-columns:1fr}
+  .wa-float{right:14px;bottom:14px;font-size:13.5px;padding:6px 16px 6px 6px;gap:8px}
+  .wa-float i{width:36px;height:36px;font-size:22px}
+  .cl{height:96px}
   .stat{padding:16px 14px}.stat b{font-size:20px}
   .stat span{font-size:10px;letter-spacing:.1em}
   .hero .wrap{padding-top:80px;padding-bottom:56px}
