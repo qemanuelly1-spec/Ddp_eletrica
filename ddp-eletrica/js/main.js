@@ -156,8 +156,8 @@ const PAGES = {
     <section class="clients bg-light"><div class="wrap">
       <span class="eyebrow">Clientes e parceiros</span>
       <div class="cl-grid">
-        <div class="cl"><b>FAZENDÃO</b><small>AGRONEGÓCIO</small></div>
-        <div class="cl"><b>OURO SAFRA</b><small>AGRONEGÓCIO</small></div>
+        <div class="cl"><img src="img/clientes/11823c15-539f-4ad1-afdd-56b33feb2251.webp" alt="Fazendão Agronegócio" loading="lazy" class="cl-logo"></div>
+        <div class="cl"><img src="img/clientes/5cda20b9-db7f-455b-aa05-f5d54c7817b2.webp" alt="Ouro Safra" loading="lazy" class="cl-logo sq"></div>
         <div class="cl dash">OUTRAS INDÚSTRIAS DO TOCANTINS</div>
       </div>
     </div></section>`,
@@ -441,7 +441,7 @@ function bindFilters(){
 let io;
 function wire(){
   const waLink = "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent("Olá! Vim pelo site da DDP Elétrica e gostaria de falar sobre um serviço.");
-  document.querySelectorAll("[data-wa]").forEach(a => a.href = waLink);
+  document.querySelectorAll("[data-wa]").forEach(a => a.href = a.dataset.waMsg ? "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(a.dataset.waMsg) : waLink);
   document.querySelectorAll("[data-phone]").forEach(a => { a.textContent = CONFIG.telefone; a.href = waLink; a.target = "_blank"; });
   document.querySelectorAll("[data-phone-txt]").forEach(a => a.textContent = CONFIG.telefone);
   document.querySelectorAll("[data-email]").forEach(a => { a.textContent = CONFIG.email; a.href = "mailto:" + CONFIG.email; });
@@ -516,7 +516,10 @@ document.getElementById("burger").onclick = () => document.getElementById("mmenu
 window.addEventListener("scroll", () => document.getElementById("nav").classList.toggle("scrolled", scrollY > 10), {passive:true});
 document.getElementById("ft-svc").innerHTML = SERVICES.map(s => `<li><a href="#/servicos/${s.slug}">${s.short}</a></li>`).join("");
 document.getElementById("yr").textContent = new Date().getFullYear();
-document.getElementById("qr").src = "https://api.qrserver.com/v1/create-qr-code/?size=220x220&margin=0&color=0B1F3A&data=" + encodeURIComponent(CONFIG.site);
+/* QR Code do rodapé (gerado na própria página, aponta para CONFIG.site) */
+try {
+  new QRCode(document.getElementById("qr"), { text: CONFIG.site, width: 136, height: 136, colorDark: "#0B1F3A", colorLight: "#ffffff", correctLevel: QRCode.CorrectLevel.M });
+} catch (e) { document.getElementById("qr").closest(".qr").style.display = "none"; }
 
 window.addEventListener("hashchange", route);
 route();
