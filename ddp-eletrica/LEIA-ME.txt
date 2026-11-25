@@ -1,0 +1,47 @@
+SITE DDP ELÉTRICA — COMO PUBLICAR NA HOSTINGER
+==============================================
+
+ESTRUTURA
+  index.html          estrutura da página (topo, menu, rodapé)
+  css/style.css       todo o visual (cores, fontes, layout, celular)
+  js/config.js        WhatsApp, telefone, e-mail, ano de fundação  <- edite aqui
+  js/conteudo.js      fotos, serviços, projetos e certificados    <- textos e imagens
+  js/main.js          funcionamento (páginas, formulário, animações)
+  img/                coloque aqui as fotos reais
+  docs/               coloque aqui os PDFs dos certificados
+
+1) ANTES DE PUBLICAR, abra js/config.js num editor de texto (Bloco de Notas, VS Code). Troque:
+   - whatsapp: número do Geraldo só com dígitos, com 55 + DDD (ex.: 5563981234567)
+   - telefone: como deve aparecer no site (ex.: (63) 98123-4567)
+   - email: e-mail de contato do projeto
+
+2) PUBLICAR
+   - No hPanel da Hostinger, abra o Gerenciador de Arquivos do domínio ddpeletrica.com.br
+   - Entre na pasta public_html
+   - Envie o index.html e as pastas css/, js/, img/ e docs/ mantendo essa estrutura
+
+3) TROCAR AS FOTOS PELAS REAIS
+   - Crie uma pasta "img" dentro de public_html e envie as fotos (JPG, até ~500 KB cada)
+   - Em js/conteudo.js, no bloco "const IMG", troque cada endereço pelo nome do arquivo,
+     ex.: hero: "img/subestacao-principal.jpg"
+   - As fotos atuais vêm do servidor da Base44 e são provisórias.
+
+4) CERTIFICADOS EM PDF
+   - Crie a pasta "docs" e envie os PDFs
+   - Em js/conteudo.js, no bloco "const CERTS", preencha pdf: "docs/nr10.pdf" etc.
+
+5) LOGO
+   - O logo atual é um raio desenhado no código. Quando tiver o arquivo da logo,
+     é só pedir para trocar.
+
+6) GALERIA DE FOTOS E CARROSSEL DO BANNER
+   - As fotos da galeria ficam em img/galeria-1.jpg ... galeria-7.jpg
+   - A lista está em js/conteudo.js, no bloco "const GALERIA" (foto + legenda)
+   - Essas mesmas fotos aparecem:
+       * na seção "Galeria de fotos" da página Projetos
+       * nas galerias de cada serviço
+       * no carrossel de fundo dos banners das páginas internas (troca a cada 5 s)
+   - Para adicionar ou trocar: coloque o arquivo em img/ e edite a lista GALERIA.
+   - ATENÇÃO: as fotos atuais são prévias do iStock com marca d'água. Antes de
+     publicar, compre a licença no iStock e substitua pelos arquivos sem marca
+     d'água (mesmo nome), ou use fotos reais das obras da DDP Elétrica.
