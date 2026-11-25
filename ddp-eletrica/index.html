@@ -11,6 +11,9 @@
 <meta property="og:url" content="https://ddpeletrica.com.br">
 <meta name="theme-color" content="#0B1F3A">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230B1F3A'/%3E%3Cpath d='M36 8 16 36h14l-4 20 22-30H34z' fill='%23F5B300'/%3E%3C/svg%3E">
+<!-- Ícone oficial do WhatsApp (Font Awesome, só os ícones de marcas) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/fontawesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/brands.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700;800&family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -112,7 +115,7 @@
           <li><svg class="ico"><use href="#i-pin"/></svg>Palmas – Tocantins, Brasil</li>
         </ul>
         <div class="qr">
-          <img id="qr" alt="QR Code do site ddpeletrica.com.br">
+          <div id="qr" class="qr-code" role="img" aria-label="QR Code do site ddpeletrica.com.br"></div>
           <div><b>QR DO SITE</b><span>ddpeletrica.com.br</span></div>
         </div>
       </div>
@@ -124,7 +127,7 @@
   </div>
 </footer>
 
-<a class="wa-float" data-wa href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg class="ico"><use href="#i-chat"/></svg></a>
+<a class="wa-float" data-wa data-wa-msg="Olá! Vim pelo site da DDP Elétrica e gostaria de fazer um orçamento." href="#" target="_blank" rel="noopener" aria-label="Faça seu orçamento pelo WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span>Faça seu orçamento</span></a>
 
 <div class="lb" id="lb" role="dialog" aria-modal="true">
   <button id="lb-x" aria-label="Fechar"><svg class="ico"><use href="#i-x"/></svg></button>
@@ -134,6 +137,7 @@
   <div class="cap" id="lb-cap"></div>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script src="js/config.js"></script>
 <script src="js/conteudo.js"></script>
 <script src="js/main.js"></script>
